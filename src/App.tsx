@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import { 
-  Github, 
-  Linkedin, 
-  Mail, 
-  Instagram, 
-  Menu, 
-  X, 
+import {
+  Github,
+  Linkedin,
+  Mail,
+  Instagram,
+  Menu,
+  X,
   ExternalLink,
   MapPin,
   Calendar,
@@ -507,11 +507,11 @@ Rules:
 
 const getGeminiResponse = async (history: ChatMessage[], newMessage: string) => {
   try {
-    const model = genAI.getGenerativeModel({ 
+    const model = genAI.getGenerativeModel({
       model: "gemini-2.5-flash-preview-09-2025",
-      systemInstruction: SYSTEM_PROMPT 
+      systemInstruction: SYSTEM_PROMPT
     });
-    
+
     const chat = model.startChat({
       history: history.map(msg => ({
         role: msg.role,
@@ -557,14 +557,14 @@ const ChatWidget = () => {
 
   const handleSend = async () => {
     if (!input.trim() || loading) return;
-    
+
     const userMsg = input;
     setInput("");
     setMessages(prev => [...prev, { role: 'user', text: userMsg }]);
     setLoading(true);
 
     const response = await getGeminiResponse(messages, userMsg);
-    
+
     setMessages(prev => [...prev, { role: 'model', text: response }]);
     setLoading(false);
   };
@@ -576,7 +576,7 @@ const ChatWidget = () => {
           <div className="chat-header">
             <Bot size={20} />
             <span>Chat with Prasanna AI</span>
-            <button onClick={() => setIsOpen(false)} style={{marginLeft: 'auto', color: '#94a3b8', background: 'none', border: 'none', cursor: 'pointer'}}><X size={18}/></button>
+            <button onClick={() => setIsOpen(false)} style={{ marginLeft: 'auto', color: '#94a3b8', background: 'none', border: 'none', cursor: 'pointer' }}><X size={18} /></button>
           </div>
           <div className="chat-body" ref={scrollRef}>
             {messages.map((msg, idx) => (
@@ -585,15 +585,15 @@ const ChatWidget = () => {
               </div>
             ))}
             {loading && (
-              <div className="chat-msg msg-model" style={{display: 'flex', gap: '8px'}}>
+              <div className="chat-msg msg-model" style={{ display: 'flex', gap: '8px' }}>
                 <Loader2 size={14} className="animate-spin" /> Thinking...
               </div>
             )}
           </div>
           <div className="chat-input-area">
-            <input 
-              type="text" 
-              className="chat-input" 
+            <input
+              type="text"
+              className="chat-input"
               placeholder="Ask a question..."
               value={input}
               onChange={(e) => setInput(e.target.value)}
@@ -625,26 +625,26 @@ const CreativeSparkGenerator = () => {
 
   return (
     <div className="card emerald" style={{ background: 'rgba(6, 78, 59, 0.8)', borderColor: '#34d399' }}>
-      <h3 className="card-title" style={{display: 'flex', alignItems: 'center', gap: '8px', color: '#d1fae5'}}>
-        <Sparkles size={20} style={{color: '#fcd34d'}} />
+      <h3 className="card-title" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#d1fae5' }}>
+        <Sparkles size={20} style={{ color: '#fcd34d' }} />
         AI Creative Spark
       </h3>
-      <p className="card-desc" style={{color: '#a7f3d0'}}>
+      <p className="card-desc" style={{ color: '#a7f3d0' }}>
         Running out of sketch ideas? Let Gemini generate a unique art prompt for you.
       </p>
-      
+
       {prompt && (
-        <div style={{background: 'rgba(6, 78, 59, 0.5)', padding: '16px', borderRadius: '8px', border: '1px solid rgba(52, 211, 153, 0.3)', marginBottom: '16px', fontStyle: 'italic', color: '#d1fae5'}}>
+        <div style={{ background: 'rgba(6, 78, 59, 0.5)', padding: '16px', borderRadius: '8px', border: '1px solid rgba(52, 211, 153, 0.3)', marginBottom: '16px', fontStyle: 'italic', color: '#d1fae5' }}>
           "{prompt}"
         </div>
       )}
-      
-      <button 
+
+      <button
         onClick={generate}
         disabled={loading}
-        style={{marginTop: 'auto', width: '100%', padding: '10px', background: '#10b981', color: '#064e3b', fontWeight: '700', borderRadius: '8px', border: 'none', cursor: 'pointer', display: 'flex', justifyContent: 'center', gap: '8px'}}
+        style={{ marginTop: 'auto', width: '100%', padding: '10px', background: '#10b981', color: '#064e3b', fontWeight: '700', borderRadius: '8px', border: 'none', cursor: 'pointer', display: 'flex', justifyContent: 'center', gap: '8px' }}
       >
-        {loading ? <Loader2 size={18} className="animate-spin"/> : <Sparkles size={18} />}
+        {loading ? <Loader2 size={18} className="animate-spin" /> : <Sparkles size={18} />}
         {loading ? "Dreaming..." : "Generate Idea"}
       </button>
     </div>
@@ -657,7 +657,7 @@ const Section: React.FC<{
   subtitle?: string;
   children: React.ReactNode;
 }> = ({ id, title, subtitle, children }) => (
-  <section id={id} className="animate-[fadeIn_0.5s_ease-out] mb-20 pt-10" style={{width: '100%'}}>
+  <section id={id} className="animate-[fadeIn_0.5s_ease-out] mb-20 pt-10" style={{ width: '100%' }}>
     <h2 className="section-title">{title}</h2>
     {subtitle && <p className="section-subtitle">{subtitle}</p>}
     {children}
@@ -694,7 +694,7 @@ const SkillBar: React.FC<{ skill: Skill }> = ({ skill }) => (
   <div className="skill-card">
     <div className="skill-name">
       <span>{skill.name}</span>
-      <span style={{fontSize: '0.75rem', color: '#7dd3fc'}}>{skill.level}</span>
+      <span style={{ fontSize: '0.75rem', color: '#7dd3fc' }}>{skill.level}</span>
     </div>
     <div className="skill-bar-bg">
       <div className="skill-bar-fill" style={{ width: `${skill.percent}%` }}></div>
@@ -717,7 +717,7 @@ export default function App() {
     window.scrollTo(0, 0);
   };
 
-  const navItems = mode === 'professional' 
+  const navItems = mode === 'professional'
     ? ['home', 'education', 'projects', 'certificates', 'skills']
     : ['home', 'hobbies', 'works'];
 
@@ -754,7 +754,7 @@ export default function App() {
           <button onClick={toggleMode} className="mode-toggle">
             {mode === 'professional' ? 'Switch to Personal' : 'Switch to Pro'}
           </button>
-          <button 
+          <button
             className="mobile-menu-btn"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
@@ -786,7 +786,7 @@ export default function App() {
 
       {/* MAIN CONTENT */}
       <main className="main-wrapper">
-        
+
         {/* --- PROFESSIONAL CONTENT --- */}
         {mode === 'professional' && (
           <>
@@ -800,14 +800,14 @@ export default function App() {
                     <span className="gradient-text">{pro.home.title}</span>
                   </h1>
                   <h2 className="hero-subtitle">{pro.home.subtitle}</h2>
-                  
+
                   <div className="quote-card">
                     <p className="quote-text">"{pro.home.quote}"</p>
                     <p className="quote-author">— Prasanna</p>
                   </div>
-                  
+
                   <p className="hero-text">{pro.home.about}</p>
-                  
+
                   <div className="chip-container">
                     {pro.home.chips.map((chip, i) => (
                       <span key={i} className={`chip ${i % 2 === 0 ? 'chip-cyan' : 'chip-pink'}`}>
@@ -828,8 +828,8 @@ export default function App() {
                 <div className="hero-right">
                   <div className="hero-photo-glow"></div>
                   <div className="hero-photo-frame">
-                    {/* Uses local public image pro.jpg */}
-                    <img src="pro.jpg" alt="Prasanna" className="hero-img" />
+                    {/* Uses local public image personal.jpg */}
+                    <img src="personal.jpg" alt="Prasanna" className="hero-img" />
                   </div>
                 </div>
               </section>
@@ -840,13 +840,13 @@ export default function App() {
                 <div className="grid-cols">
                   {pro.education.map((edu, idx) => (
                     <Card key={idx} title={edu.degree}>
-                      <p style={{color: '#7dd3fc', fontWeight: 500, marginBottom: '8px'}}>{edu.school}</p>
-                      <div style={{display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.9rem', color: '#94a3b8', marginBottom: '16px'}}>
+                      <p style={{ color: '#7dd3fc', fontWeight: 500, marginBottom: '8px' }}>{edu.school}</p>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.9rem', color: '#94a3b8', marginBottom: '16px' }}>
                         <Calendar size={14} /> {edu.year}
-                        <MapPin size={14} style={{marginLeft: '8px'}} /> {edu.location}
+                        <MapPin size={14} style={{ marginLeft: '8px' }} /> {edu.location}
                       </div>
-                      {edu.grade && <p style={{fontSize: '0.9rem', marginBottom: '8px'}}>Grade: <span style={{color: 'white'}}>{edu.grade}</span></p>}
-                      {edu.honor && <span style={{color: '#facc15', fontSize: '0.9rem', fontWeight: 600}}>{edu.honor}</span>}
+                      {edu.grade && <p style={{ fontSize: '0.9rem', marginBottom: '8px' }}>Grade: <span style={{ color: 'white' }}>{edu.grade}</span></p>}
+                      {edu.honor && <span style={{ color: '#facc15', fontSize: '0.9rem', fontWeight: 600 }}>{edu.honor}</span>}
                     </Card>
                   ))}
                 </div>
@@ -857,23 +857,23 @@ export default function App() {
               <Section id="projects" title="Featured Projects" subtitle="Academic, simulation, and personal work blending cloud & data.">
                 <div className="grid-cols">
                   {pro.projects.map((proj, idx) => (
-                    <Card 
-                      key={idx} 
+                    <Card
+                      key={idx}
                       title={proj.title}
                       footer={
                         <>
                           <span>📅 {proj.year}</span>
                           {proj.link ? (
                             <a href={proj.link} target="_blank" rel="noreferrer" className="card-link">
-                              Live Demo <ExternalLink size={14}/>
+                              Live Demo <ExternalLink size={14} />
                             </a>
                           ) : (
-                            <span style={{color: '#34d399', fontSize: '0.8rem'}}>✔ Completed</span>
+                            <span style={{ color: '#34d399', fontSize: '0.8rem' }}>✔ Completed</span>
                           )}
                         </>
                       }
                     >
-                      <p style={{marginBottom: '16px', color: '#cbd5e1', fontSize: '0.9rem', lineHeight: 1.6}}>{proj.desc}</p>
+                      <p style={{ marginBottom: '16px', color: '#cbd5e1', fontSize: '0.9rem', lineHeight: 1.6 }}>{proj.desc}</p>
                       <div className="tag-row">
                         {proj.tags.map((t, i) => (
                           <span key={i} className="mini-tag">{t}</span>
@@ -887,31 +887,31 @@ export default function App() {
 
             {activeSection === 'certificates' && (
               <Section id="certs" title="Certifications" subtitle="Verified credentials in Cloud, AI, and Data.">
-                 <div className="cert-stats">
-                    <div className="stat-box">
-                      <div className="stat-val" style={{color: '#f472b6'}}>5</div>
-                      <div className="stat-label">Total Certs</div>
-                    </div>
-                    <div className="stat-box">
-                      <div className="stat-val" style={{color: '#38bdf8'}}>4</div>
-                      <div className="stat-label">Categories</div>
-                    </div>
-                    <div className="stat-box">
-                      <div className="stat-val" style={{color: '#34d399'}}>2025</div>
-                      <div className="stat-label">Latest</div>
-                    </div>
-                 </div>
+                <div className="cert-stats">
+                  <div className="stat-box">
+                    <div className="stat-val" style={{ color: '#f472b6' }}>5</div>
+                    <div className="stat-label">Total Certs</div>
+                  </div>
+                  <div className="stat-box">
+                    <div className="stat-val" style={{ color: '#38bdf8' }}>4</div>
+                    <div className="stat-label">Categories</div>
+                  </div>
+                  <div className="stat-box">
+                    <div className="stat-val" style={{ color: '#34d399' }}>2025</div>
+                    <div className="stat-label">Latest</div>
+                  </div>
+                </div>
 
-                 <div className="grid-cols">
-                    {pro.certificates.map((cert, idx) => (
-                      <Card key={idx} title={cert.title}>
-                        <p style={{fontSize: '0.9rem', color: '#94a3b8', marginBottom: '16px'}}>{cert.desc}</p>
-                        <div className="cert-badge">
-                          Category: {cert.category}
-                        </div>
-                      </Card>
-                    ))}
-                 </div>
+                <div className="grid-cols">
+                  {pro.certificates.map((cert, idx) => (
+                    <Card key={idx} title={cert.title}>
+                      <p style={{ fontSize: '0.9rem', color: '#94a3b8', marginBottom: '16px' }}>{cert.desc}</p>
+                      <div className="cert-badge">
+                        Category: {cert.category}
+                      </div>
+                    </Card>
+                  ))}
+                </div>
               </Section>
             )}
 
@@ -925,7 +925,7 @@ export default function App() {
                     </div>
                   </div>
                   <div className="skill-category">
-                    <h3 className="category-title" style={{color: '#c084fc'}}>Backend & Cloud</h3>
+                    <h3 className="category-title" style={{ color: '#c084fc' }}>Backend & Cloud</h3>
                     <div>
                       {[...pro.skills.backend, { name: "AWS", level: "Intermediate", percent: 60, time: "3 months" }].map((s, i) => <SkillBar key={i} skill={s} />)}
                     </div>
@@ -944,32 +944,32 @@ export default function App() {
           <div className="personal">
             {activeSection === 'home' && (
               <section className="hero animate-[fadeIn_0.5s]">
-                 <div className="hero-left">
-                   <div className="pill pill-emerald">
-                     <span className="pill-dot"></span> Welcome to my world
-                   </div>
-                   <h1 className="hero-title text-emerald-100">{per.home.title}</h1>
-                   <h2 className="hero-subtitle text-emerald-200">{per.home.subtitle}</h2>
+                <div className="hero-left">
+                  <div className="pill pill-emerald">
+                    <span className="pill-dot"></span> Welcome to my world
+                  </div>
+                  <h1 className="hero-title text-emerald-100">{per.home.title}</h1>
+                  <h2 className="hero-subtitle text-emerald-200">{per.home.subtitle}</h2>
 
-                   <div className="quote-card emerald">
-                     <p className="quote-text text-emerald-100">"{per.home.quote}"</p>
-                   </div>
-                   
-                   <p className="hero-text text-emerald-100">{per.home.about}</p>
-                   
-                   <div className="chip-container">
-                     {per.home.chips.map((c, i) => (
-                       <span key={i} className="chip chip-emerald">{c}</span>
-                     ))}
-                   </div>
-                 </div>
-                 <div className="hero-right">
-                    <div className="hero-photo-glow"></div>
-                    <div className="hero-photo-frame" style={{background: '#064e3b', borderColor: '#065f46'}}>
-                       {/* Uses local public image personal.jpg */}
-                       <img src="personal.jpg" alt="Casual Prasanna" className="hero-img" />
-                    </div>
-                 </div>
+                  <div className="quote-card emerald">
+                    <p className="quote-text text-emerald-100">"{per.home.quote}"</p>
+                  </div>
+
+                  <p className="hero-text text-emerald-100">{per.home.about}</p>
+
+                  <div className="chip-container">
+                    {per.home.chips.map((c, i) => (
+                      <span key={i} className="chip chip-emerald">{c}</span>
+                    ))}
+                  </div>
+                </div>
+                <div className="hero-right">
+                  <div className="hero-photo-glow"></div>
+                  <div className="hero-photo-frame" style={{ background: '#064e3b', borderColor: '#065f46' }}>
+                    {/* Uses local public image personal.jpg */}
+                    <img src="personal.jpg" alt="Casual Prasanna" className="hero-img" />
+                  </div>
+                </div>
               </section>
             )}
 
@@ -977,8 +977,8 @@ export default function App() {
               <Section id="hobbies" title="My Hobbies" subtitle="Creative outlets that keep my mind active.">
                 <div className="grid-cols">
                   {per.hobbies.map((hobby, idx) => (
-                    <Card key={idx} title={hobby.title} isEmerald={true} footer={<span style={{color: '#6ee7b7', fontSize: '0.8rem'}}>{hobby.meta}</span>}>
-                       <p style={{color: '#d1fae5', fontSize: '0.9rem', lineHeight: 1.6}}>{hobby.desc}</p>
+                    <Card key={idx} title={hobby.title} isEmerald={true} footer={<span style={{ color: '#6ee7b7', fontSize: '0.8rem' }}>{hobby.meta}</span>}>
+                      <p style={{ color: '#d1fae5', fontSize: '0.9rem', lineHeight: 1.6 }}>{hobby.desc}</p>
                     </Card>
                   ))}
                 </div>
@@ -987,19 +987,19 @@ export default function App() {
 
             {activeSection === 'works' && (
               <Section id="works" title="Creative Works" subtitle="Sketches, edits, and imagination.">
-                 <div className="grid-cols">
-                    {/* Gemini AI Feature for Personal Mode */}
-                    <CreativeSparkGenerator />
+                <div className="grid-cols">
+                  {/* Gemini AI Feature for Personal Mode */}
+                  <CreativeSparkGenerator />
 
-                    {per.works.map((work, idx) => (
-                      <Card key={idx} title={work.title} isEmerald={true}>
-                         <p style={{color: '#d1fae5', fontSize: '0.9rem', marginBottom: '16px'}}>{work.desc}</p>
-                         <span className="cert-badge" style={{background: 'rgba(6, 95, 70, 0.8)', borderColor: '#34d399', color: '#6ee7b7'}}>
-                           {work.meta}
-                         </span>
-                      </Card>
-                    ))}
-                 </div>
+                  {per.works.map((work, idx) => (
+                    <Card key={idx} title={work.title} isEmerald={true}>
+                      <p style={{ color: '#d1fae5', fontSize: '0.9rem', marginBottom: '16px' }}>{work.desc}</p>
+                      <span className="cert-badge" style={{ background: 'rgba(6, 95, 70, 0.8)', borderColor: '#34d399', color: '#6ee7b7' }}>
+                        {work.meta}
+                      </span>
+                    </Card>
+                  ))}
+                </div>
               </Section>
             )}
           </div>
@@ -1016,7 +1016,7 @@ export default function App() {
           <a href="mailto:named.as.prasanna@gmail.com" className="social-icon"><Mail size={18} /></a>
           <a href="https://www.instagram.com/__prasannaaah__?utm_source=qr" target="_blank" className="social-icon"><Instagram size={18} /></a>
         </div>
-        <p style={{fontSize: '0.8rem', color: '#64748b'}}>© {new Date().getFullYear()} Prasanna Iyappan</p>
+        <p style={{ fontSize: '0.8rem', color: '#64748b' }}>© {new Date().getFullYear()} Prasanna Iyappan</p>
       </footer>
     </div>
   );
