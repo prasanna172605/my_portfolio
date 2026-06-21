@@ -98,7 +98,7 @@ const SnuggleMusicCard: React.FC<{ proj: Project }> = ({ proj }) => {
         <div style={{
           display: 'flex', gap: '12px', marginBottom: '16px', flexWrap: 'wrap'
         }}>
-          {[['📦', apkSize + ' MB'], ['📅', proj.year ?? '2025'], ['📱', 'Android 8+']].map(([icon, val]) => (
+          {[['📦', apkSize + ' MB'], ['📅', proj.year ?? '2026'], ['📱', 'Android 8+']].map(([icon, val]) => (
             <span key={val} style={{
               fontSize: '0.75rem', color: '#94a3b8', background: 'rgba(15,23,42,0.5)',
               padding: '4px 10px', borderRadius: '6px', border: '1px solid rgba(71,85,105,0.4)'
