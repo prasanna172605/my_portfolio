@@ -133,7 +133,7 @@ const DATA = {
       },
       {
         title: "SnuggleMusix",
-        desc: "A premium open-source Android music player built with Kotlin & Jetpack Compose. Supports YouTube Music, JioSaavn, Spotify import, lyrics sync, Material You theming, and more. Forked & extended from Echo music with full rebranding and CI/CD release pipeline on GitHub Actions.",
+        desc: "A premium open-source Android music player built with Kotlin & Jetpack Compose. Supports YouTube Music, JioSaavn, Spotify import, lyrics sync, Material You theming, and more. Features a full CI/CD release pipeline on GitHub Actions.",
         tags: ["Kotlin", "Jetpack Compose", "Android", "GitHub Actions", "Material You"],
         year: "2025",
         link: "https://github.com/prasanna172605/Snugle-Musix",
