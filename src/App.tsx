@@ -558,20 +558,18 @@ const getCreativeSpark = async () => {
 
 // SnuggleMusix App Project Card with live APK download
 const SnuggleMusicCard: React.FC<{ proj: Project }> = ({ proj }) => {
-  const [apkUrl, setApkUrl] = useState('');
+  const params = new URLSearchParams(window.location.search);
+  const paramApk = params.get('apk_url');
+  const initialApkUrl = paramApk ? decodeURIComponent(paramApk) : '';
+
+  const [apkUrl, setApkUrl] = useState(initialApkUrl);
   const [apkVersion, setApkVersion] = useState('');
   const [apkSize, setApkSize] = useState('');
   const [loading, setLoading] = useState(true);
   const [downloading, setDownloading] = useState(false);
-  const [fromApp, setFromApp] = useState(false);
+  const fromApp = Boolean(paramApk);
 
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const paramApk = params.get('apk_url');
-    if (paramApk) {
-      setApkUrl(decodeURIComponent(paramApk));
-      setFromApp(true);
-    }
     if (proj.githubRelease) {
       fetch(proj.githubRelease, { headers: { Accept: 'application/vnd.github+json' } })
         .then(r => r.json())
