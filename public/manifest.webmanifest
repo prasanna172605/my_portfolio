@@ -1,0 +1,22 @@
+{
+  "name": "Prasanna Iyappan Portfolio & Snuggle Musix",
+  "short_name": "Prasanna",
+  "description": "Android Developer Portfolio featuring Snuggle Musix, a beautiful open-source Android music player.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#09090b",
+  "theme_color": "#FF3366",
+  "icons": [
+    {
+      "src": "/favicon/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["portfolio", "music", "android", "development"]
+}

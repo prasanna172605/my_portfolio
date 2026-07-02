@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Download, Github, Smartphone, Layout, Mic, Shield, Layers, Zap, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useIsMobile } from '../hooks/useMediaQuery';
+import { SEO } from '../components/SEO';
 import './SnuggleMusixLanding.css';
 
 const Header = () => {
@@ -54,10 +55,10 @@ const Hero = () => {
         A premium, open-source Android music player built with Material 3. Experience lossless audio, dynamic themes, and synchronized lyrics in a beautiful package.
       </p>
       <div className="snuggle-hero-ctas">
-        <a href="https://github.com/prasanna172605/Snugle-Musix/releases/download/v5.2.26/SnuggleMusix-5.2.26-Universal.apk" download className="snuggle-btn snuggle-btn-primary">
+        <a href="https://github.com/prasanna172605/Snugle-Musix/releases/download/v5.2.26/SnuggleMusix-5.2.26-Universal.apk" download className="snuggle-btn snuggle-btn-primary" aria-label="Download Snuggle Musix APK">
           <Download size={18} /> Download APK
         </a>
-        <a href="https://github.com/prasanna172605/Snugle-Musix" target="_blank" rel="noreferrer" className="snuggle-btn snuggle-btn-secondary">
+        <a href="https://github.com/prasanna172605/Snugle-Musix" target="_blank" rel="noreferrer" className="snuggle-btn snuggle-btn-secondary" aria-label="View Snuggle Musix Source Code on GitHub">
           <Github size={18} /> View Source
         </a>
       </div>
@@ -85,7 +86,7 @@ const Screenshots = () => {
         <div className="snuggle-marquee-group">
           {screenshots.map((s, i) => (
             <div key={`m1-${i}`} className="snuggle-phone-mockup-wrapper">
-              <img src={`/screenshots/${s.file}`} alt={s.label} className="snuggle-phone-mockup" />
+              <img src={`/screenshots/${s.file}`} alt={`Snuggle Musix ${s.label} interface screenshot`} className="snuggle-phone-mockup" loading="lazy" />
               <p className="snuggle-caption" style={{ color: 'var(--muted)' }}>{s.label}</p>
             </div>
           ))}
@@ -93,7 +94,7 @@ const Screenshots = () => {
         <div className="snuggle-marquee-group">
           {screenshots.map((s, i) => (
             <div key={`m2-${i}`} className="snuggle-phone-mockup-wrapper">
-              <img src={`/screenshots/${s.file}`} alt={s.label} className="snuggle-phone-mockup" />
+              <img src={`/screenshots/${s.file}`} alt={`Snuggle Musix ${s.label} interface screenshot`} className="snuggle-phone-mockup" loading="lazy" />
               <p className="snuggle-caption" style={{ color: 'var(--muted)' }}>{s.label}</p>
             </div>
           ))}
@@ -196,8 +197,40 @@ const CustomFooter = () => {
 };
 
 export function SnuggleMusixLanding() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": ["SoftwareApplication", "MobileApplication", "Product"],
+    "name": "Snuggle Musix",
+    "description": "A beautiful, open-source Android music player featuring Material You, Voice Search, Listen Together, Dynamic Themes and Offline Playback.",
+    "operatingSystem": "Android",
+    "applicationCategory": "MultimediaApplication",
+    "downloadUrl": "https://github.com/prasanna172605/Snugle-Musix/releases",
+    "softwareVersion": "5.2.26",
+    "author": {
+      "@type": "Person",
+      "name": "Prasanna Iyappan",
+      "url": "https://prasanna0705.netlify.app/"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Prasanna Iyappan"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://prasanna0705.netlify.app/Snuggle-Musix"
+    },
+    "url": "https://prasanna0705.netlify.app/Snuggle-Musix",
+    "image": "https://prasanna0705.netlify.app/snuggle-logo.png"
+  };
+
   return (
     <div className="snuggle-root">
+      <SEO 
+        title="Snuggle Musix – Modern Material You Music Player for Android" 
+        description="Snuggle Musix is a beautiful open-source Android music player featuring Material You, Apple Music inspired player, Voice Search, Listen Together, Dynamic Themes and Offline Playback."
+        canonicalUrl="https://prasanna0705.netlify.app/Snuggle-Musix"
+        structuredData={structuredData}
+      />
       <Header />
       <Hero />
       <Features />

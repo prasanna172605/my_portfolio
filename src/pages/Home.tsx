@@ -1,6 +1,7 @@
 
 import type { ThemeMode } from '../data';
 import { NavLink } from 'react-router-dom';
+import { SEO } from '../components/SEO';
 
 interface HomeProps {
   mode: ThemeMode;
@@ -11,8 +12,40 @@ export const Home: React.FC<HomeProps> = ({ mode, data }) => {
   const pro = data.professional;
   const per = data.personal;
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://prasanna0705.netlify.app/#person",
+        "name": "Prasanna Iyappan",
+        "jobTitle": "Android Developer",
+        "url": "https://prasanna0705.netlify.app/",
+        "sameAs": [
+          "https://github.com/prasanna172605",
+          "https://www.linkedin.com/in/prasanna-iyappan-b728042a3/"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://prasanna0705.netlify.app/#website",
+        "url": "https://prasanna0705.netlify.app/",
+        "name": "Prasanna Iyappan Portfolio",
+        "publisher": {
+          "@id": "https://prasanna0705.netlify.app/#person"
+        }
+      }
+    ]
+  };
+
   return (
     <>
+      <SEO 
+        title="Prasanna Iyappan | Android & Cloud Developer Portfolio" 
+        description="I'm Prasanna Iyappan, an AIML student and the lead developer of Snuggle Musix, a beautiful open-source Android music player featuring Material You."
+        canonicalUrl="https://prasanna0705.netlify.app/"
+        structuredData={structuredData}
+      />
       {mode === 'professional' ? (
         <section className="hero animate-[fadeIn_0.5s]">
           <div className="hero-left">

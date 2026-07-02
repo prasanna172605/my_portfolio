@@ -50,8 +50,8 @@ export const DATA = {
       title: "Prasanna Iyappan",
       subtitle: "Cloud & Data Enthusiast with a Creative Mindset",
       quote: "Great things are built by those who dare to start small and stay consistent.",
-      about: "I'm a B.E. AIML student who loves working with cloud, data, and visualisation. I enjoy turning messy datasets into crisp dashboards and blending technical skills with creativity — from AWS and Azure to Power BI, Python, and design.",
-      chips: ["⚙️ Cloud & Data", "📊 Power BI Dashboards", "🎨 Creative Problem Solver"]
+      about: "I'm a B.E. AIML student who loves working with cloud, data, and visualisation. I enjoy turning messy datasets into crisp dashboards and blending technical skills with creativity — from AWS and Azure to Power BI, Python, and design. I'm also the lead developer of Snuggle Musix, a beautiful open source Android music player built with Jetpack Compose and Material 3 (Material You), featuring offline music, voice search, and listen together capabilities.",
+      chips: ["⚙️ Cloud & Data", "📊 Power BI Dashboards", "📱 Android Music Player", "🎨 Creative Problem Solver"]
     },
     education: [
       {
@@ -167,8 +167,8 @@ export const DATA = {
       title: "Hello, I’m ABERRANT",
       subtitle: "This side is all about art, mood, and the things that keep me sane.",
       quote: "Life feels right when I’m creating something – a sketch, a story, a scene, or just a memory with the people I care about.",
-      about: "Beyond tech and cloud, I’m someone who enjoys long sketching sessions, listening to music on repeat, and editing random clips just to see how far I can push my creativity. I love building characters in my head and turning those ideas into art.",
-      chips: ["✏️ Sketching", "🎨 Painting", "🎬 Video Edits", "📖 Story Concepts"],
+      about: "I love coding up crazy ideas at 2 AM, diving deep into datasets, and building sleek UI components. Outside of the cloud and data world, I'm usually iterating on Snuggle Musix, my open source Material You Android music player built with Jetpack Compose, or experimenting with new design paradigms.",
+      chips: ["💻 2 AM Coder", "🎵 Snuggle Musix Dev", "🤔 Deep Thinker", "🍕 Pizza Connoisseur"],
       tags: ["Pencil sketching – 5 yrs", "Colour pencil – 4 yrs", "Freehand – 6 yrs", "Digital art – 2 yrs"]
     },
     hobbies: [
