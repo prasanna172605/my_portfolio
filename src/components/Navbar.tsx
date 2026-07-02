@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Terminal, Leaf, Menu, X } from 'lucide-react';
 import type { ThemeMode } from '../data';
+import { useIsMobile } from '../hooks/useMediaQuery';
 
 interface NavbarProps {
   mode: ThemeMode;
@@ -10,6 +11,7 @@ interface NavbarProps {
 
 export const Navbar: React.FC<NavbarProps> = ({ mode, toggleMode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const isMobile = useIsMobile();
 
   const navItems = mode === 'professional'
     ? [
@@ -47,15 +49,17 @@ export const Navbar: React.FC<NavbarProps> = ({ mode, toggleMode }) => {
         </nav>
 
         {/* Snuggle Musix Link */}
-        <div className="hidden md:flex">
-          <NavLink
-            to="/Snuggle-Musix"
-            className="px-4 py-2 rounded-full bg-gradient-to-r from-pink-500 to-orange-500 text-white font-medium hover:scale-105 transition-transform text-sm no-underline"
-            style={{ backgroundImage: 'linear-gradient(135deg, #FF3366, #FF9933)', color: 'white', padding: '0.5rem 1rem', borderRadius: '100px', fontSize: '0.875rem', fontWeight: 500, textDecoration: 'none' }}
-          >
-            Snuggle Musix
-          </NavLink>
-        </div>
+        {!isMobile && (
+          <div>
+            <NavLink
+              to="/Snuggle-Musix"
+              className="px-4 py-2 rounded-full bg-gradient-to-r from-pink-500 to-orange-500 text-white font-medium hover:scale-105 transition-transform text-sm no-underline"
+              style={{ backgroundImage: 'linear-gradient(135deg, #FF3366, #FF9933)', color: 'white', padding: '0.5rem 1rem', borderRadius: '100px', fontSize: '0.875rem', fontWeight: 500, textDecoration: 'none' }}
+            >
+              Snuggle Musix
+            </NavLink>
+          </div>
+        )}
 
         {/* Controls */}
         <div className="header-controls">
@@ -87,6 +91,14 @@ export const Navbar: React.FC<NavbarProps> = ({ mode, toggleMode }) => {
               {item.label}
             </NavLink>
           ))}
+          <NavLink
+            to="/Snuggle-Musix"
+            onClick={() => setIsMenuOpen(false)}
+            className="mobile-nav-item"
+            style={{ backgroundImage: 'linear-gradient(135deg, #FF3366, #FF9933)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
+          >
+            Snuggle Musix
+          </NavLink>
         </div>
       )}
     </>
