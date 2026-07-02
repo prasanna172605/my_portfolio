@@ -81,11 +81,8 @@ const Hero = () => {
         </motion.div>
         
         <motion.div initial={{ opacity: 0, scale: 0.9, rotate: -5 }} animate={{ opacity: 1, scale: 1, rotate: 0 }} transition={{ duration: 0.8, ease: "easeOut" }} style={{ position: 'relative', height: '600px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          {/* Abstract representation of the app mockup since we don't have the actual assets path mapped yet */}
           <div style={{ width: '300px', height: '600px', borderRadius: '40px', background: '#111', border: '8px solid #222', boxShadow: '0 25px 50px -12px rgba(0,0,0,0.5)', overflow: 'hidden', position: 'relative' }}>
-            <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '40%', background: 'linear-gradient(135deg, rgba(255,51,102,0.4), rgba(255,153,51,0.2))', filter: 'blur(20px)' }}></div>
-            <div style={{ position: 'absolute', bottom: '10%', left: '10%', right: '10%', height: '80px', borderRadius: '20px', background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(10px)' }}></div>
-            <div style={{ position: 'absolute', top: '20%', left: '10%', right: '10%', height: '250px', borderRadius: '20px', background: 'rgba(255,255,255,0.05)', backdropFilter: 'blur(10px)' }}></div>
+            <img src="/screenshots/Homepage.jpeg" alt="Snuggle Musix App" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             <div style={{ position: 'absolute', top: '10px', left: '50%', transform: 'translateX(-50%)', width: '100px', height: '25px', borderRadius: '20px', background: '#000' }}></div>
           </div>
         </motion.div>
@@ -139,9 +136,9 @@ const Screenshots = () => {
         <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '1.1rem', maxWidth: '600px', margin: '0 auto' }}>Designed following Material 3 principles with an emphasis on fluid animations and dynamic colors.</p>
       </div>
       <div style={{ display: 'flex', gap: '2rem', padding: '1rem 2rem', overflowX: 'auto', scrollSnapType: 'x mandatory' }}>
-        {[1, 2, 3, 4].map(i => (
-          <div key={i} style={{ minWidth: '300px', height: '600px', borderRadius: '24px', backgroundColor: '#111', border: '4px solid #333', flexShrink: 0, scrollSnapAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <span style={{ color: '#555' }}>Screenshot {i}</span>
+        {['Homepage.jpeg', 'Music Player.jpeg', 'Playlist & library.jpeg', 'Search and Explore.jpeg', 'Song recognition.jpeg', 'Synchronized lyrics.jpeg'].map((filename, i) => (
+          <div key={i} style={{ minWidth: '300px', height: '600px', borderRadius: '24px', backgroundColor: '#111', border: '4px solid #333', flexShrink: 0, scrollSnapAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+            <img src={`/screenshots/${filename}`} alt={`Screenshot ${i + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           </div>
         ))}
       </div>
