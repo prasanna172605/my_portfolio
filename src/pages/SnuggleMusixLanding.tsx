@@ -64,7 +64,7 @@ const Hero = () => {
         A premium, open-source Android music player built with Material 3. Experience lossless audio, dynamic themes, and synchronized lyrics in a beautiful package.
       </p>
       <div className="snuggle-hero-ctas">
-        <a href="https://github.com/prasanna172605/Snugle-Musix/releases/download/v5.2.26/SnuggleMusix-5.2.26-Universal.apk" download className="snuggle-btn snuggle-btn-primary" aria-label="Download Snuggle Musix APK">
+        <a href="https://github.com/prasanna172605/Snugle-Musix/releases/download/v5.2.26/SnuggleMusix-5.2.26-Universal.apk" className="snuggle-btn snuggle-btn-primary" aria-label="Download Snuggle Musix APK">
           <Download size={18} /> Download APK
         </a>
         <a href="https://github.com/prasanna172605/Snugle-Musix" target="_blank" rel="noreferrer" className="snuggle-btn snuggle-btn-secondary" aria-label="View Snuggle Musix Source Code on GitHub">

@@ -120,7 +120,6 @@ const SnuggleMusicCard: React.FC<{ proj: Project }> = ({ proj }) => {
         ) : apkUrl ? (
           <a
             href={apkUrl}
-            download
             onClick={() => setDownloading(true)}
             style={{
               display: 'inline-flex', alignItems: 'center', gap: '7px',
