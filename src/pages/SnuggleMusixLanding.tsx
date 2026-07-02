@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Download, Github, Smartphone, Layout, Mic, Shield, Sun, Moon, Brain, Ban, Radio, DownloadCloud } from 'lucide-react';
+import { Download, Github, Smartphone, Layout, Mic, Shield, Sun, Moon, Brain, Ban, Radio, DownloadCloud, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useIsMobile } from '../hooks/useMediaQuery';
 import { SEO } from '../components/SEO';
@@ -18,33 +18,31 @@ const Header = ({ theme, setTheme }: { theme: 'dark' | 'light', setTheme: (t: 'd
   }, []);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled ? 'bg-black/50 backdrop-blur-lg border-b border-white/10 py-4' : 'bg-transparent py-6'
-    }`} style={{ padding: scrolled ? '1rem 2rem' : '1.5rem 2rem', position: 'fixed', top: 0, width: '100%', zIndex: 50, transition: 'all 0.3s', backgroundColor: scrolled ? 'rgba(9,9,11,0.9)' : 'transparent', backdropFilter: scrolled ? 'blur(12px)' : 'none', borderBottom: scrolled ? '1px solid rgba(255,255,255,0.05)' : 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-        <div style={{ width: '40px', height: '40px', borderRadius: '50%', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyItems: 'center' }}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300`} style={{ padding: scrolled ? '1rem 2rem' : '1.5rem 2rem', position: 'fixed', top: 0, width: '100%', zIndex: 50, transition: 'all 0.3s', backgroundColor: scrolled ? 'var(--surface-soft)' : 'transparent', opacity: scrolled ? 0.95 : 1, backdropFilter: scrolled ? 'blur(12px)' : 'none', borderBottom: scrolled ? '1px solid var(--hairline)' : 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: isMobile ? '0.5rem' : '1rem' }}>
+        <div style={{ width: isMobile ? '32px' : '40px', height: isMobile ? '32px' : '40px', borderRadius: '50%', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyItems: 'center' }}>
           <img src="/snuggle-logo.png" alt="Snuggle Musix" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
         </div>
-        <span className="snuggle-display-font" style={{ fontWeight: 'bold', fontSize: '1.25rem', letterSpacing: '-0.5px' }}>Snuggle Musix</span>
+        <span className="snuggle-display-font" style={{ color: 'var(--ink)', fontWeight: 'bold', fontSize: isMobile ? '1.1rem' : '1.25rem', letterSpacing: '-0.5px' }}>{isMobile ? 'Snuggle' : 'Snuggle Musix'}</span>
       </div>
-      <nav style={{ display: 'flex', gap: isMobile ? '1rem' : '2rem', alignItems: 'center' }}>
+      <nav style={{ display: 'flex', gap: isMobile ? '0.75rem' : '2rem', alignItems: 'center' }}>
         {!isMobile && (
           <>
-            <a href="https://github.com/prasanna172605/Snugle-Musix" target="_blank" rel="noreferrer" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', fontSize: '0.9rem', transition: 'color 0.2s' }}><Github size={18} /></a>
+            <a href="https://github.com/prasanna172605/Snugle-Musix" target="_blank" rel="noreferrer" style={{ color: 'var(--muted)', textDecoration: 'none', fontSize: '0.9rem', transition: 'color 0.2s' }}><Github size={18} /></a>
           </>
         )}
         <button 
           onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
           style={{ 
             background: 'none', border: 'none', cursor: 'pointer', 
-            color: theme === 'dark' ? 'white' : 'black', 
+            color: 'var(--ink)', 
             display: 'flex', alignItems: 'center' 
           }}
           aria-label="Toggle Theme"
         >
           {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
         </button>
-        <Link to="/" style={{ padding: '0.5rem 1.25rem', borderRadius: '100px', backgroundColor: 'rgba(255,255,255,0.1)', color: 'white', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 500, backdropFilter: 'blur(10px)', border: '1px solid rgba(255,255,255,0.1)' }}>Back{isMobile ? '' : ' to Portfolio'}</Link>
+        <Link to="/" style={{ padding: isMobile ? '0.4rem 1rem' : '0.5rem 1.25rem', borderRadius: '100px', backgroundColor: 'var(--surface-dark)', color: 'var(--ink)', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 500, backdropFilter: 'blur(10px)', border: '1px solid var(--hairline)' }}>Back{isMobile ? '' : ' to Portfolio'}</Link>
       </nav>
     </header>
   );
@@ -147,7 +145,7 @@ const Features = () => {
             <p className="snuggle-body-sm" style={{ color: 'var(--muted)' }}>Intelligent queue management and AI-curated recommendations.</p>
           </div>
         </div>
-        <div className="snuggle-feature-card snuggle-feature-card-4">
+        <div className="snuggle-feature-card snuggle-feature-card-4 snuggle-col-span-2 flex-row">
           <div className="snuggle-feature-icon"><Ban size={24} /></div>
           <div>
             <h3 className="snuggle-title-md">No ads for now and forever</h3>
@@ -173,6 +171,13 @@ const Features = () => {
           <div>
             <h3 className="snuggle-title-md">Privacy First & Open Source</h3>
             <p className="snuggle-body-sm" style={{ color: 'var(--muted)' }}>Completely free and open source. No tracking, no ads. Your listening history and data stay completely on your device.</p>
+          </div>
+        </div>
+        <div className="snuggle-feature-card snuggle-feature-card-8 snuggle-col-span-2 flex-row">
+          <div className="snuggle-feature-icon" style={{ color: 'var(--ink)' }}><Users size={24} /></div>
+          <div>
+            <h3 className="snuggle-title-md">Listen Together</h3>
+            <p className="snuggle-body-sm" style={{ color: 'var(--muted)' }}>Sync your playback with friends in real-time. Listen to the same music together, no matter where you are.</p>
           </div>
         </div>
       </div>

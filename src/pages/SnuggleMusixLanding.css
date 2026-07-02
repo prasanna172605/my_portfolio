@@ -347,6 +347,7 @@
 .snuggle-feature-card-5 { background: var(--accent-ochre); border-color: rgba(232, 185, 74, 0.2); }
 .snuggle-feature-card-6 { background: var(--accent-mint); border-color: rgba(164, 212, 197, 0.2); }
 .snuggle-feature-card-7 { background: var(--surface-soft); }
+.snuggle-feature-card-8 { background: var(--accent-violet); border-color: rgba(184, 164, 237, 0.2); }
 
 .light-mode .snuggle-feature-card-1 { background: var(--accent-violet); border-color: rgba(138, 104, 218, 0.2); }
 .light-mode .snuggle-feature-card-2 { background: var(--accent-pink); border-color: rgba(229, 69, 125, 0.2); }
@@ -354,6 +355,7 @@
 .light-mode .snuggle-feature-card-4 { background: var(--accent-peach); border-color: rgba(230, 158, 119, 0.2); }
 .light-mode .snuggle-feature-card-5 { background: var(--accent-ochre); border-color: rgba(209, 166, 67, 0.2); }
 .light-mode .snuggle-feature-card-6 { background: var(--accent-mint); border-color: rgba(148, 191, 177, 0.2); }
+.light-mode .snuggle-feature-card-8 { background: var(--accent-violet); border-color: rgba(138, 104, 218, 0.2); }
 
 .snuggle-feature-icon { color: #b8a4ed; }
 .snuggle-feature-card-2 .snuggle-feature-icon { color: #ff4d8b; }
@@ -361,6 +363,7 @@
 .snuggle-feature-card-4 .snuggle-feature-icon { color: #ffb084; }
 .snuggle-feature-card-5 .snuggle-feature-icon { color: #e8b94a; }
 .snuggle-feature-card-6 .snuggle-feature-icon { color: #a4d4c5; }
+.snuggle-feature-card-8 .snuggle-feature-icon { color: #b8a4ed; }
 
 /* MEDIA QUERIES */
 @media (max-width: 1024px) {
