@@ -69,7 +69,7 @@ const Hero = () => {
             A premium, open-source Android music player built with Material 3. Experience lossless audio, dynamic themes, and synchronized lyrics in a beautiful package.
           </motion.p>
           <motion.div variants={fadeIn} style={{ display: 'flex', gap: '1rem', marginTop: '1rem' }}>
-            <a href="https://github.com/prasanna172605/Snugle-Musix/releases/download/v5.2.25/SnuggleMusix-5.2.25-Universal.apk" download style={{ padding: '1rem 2rem', borderRadius: '100px', background: 'linear-gradient(135deg, #FF3366, #FF9933)', color: 'white', textDecoration: 'none', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.5rem', boxShadow: '0 10px 30px -10px rgba(255,51,102,0.5)', transition: 'transform 0.2s', border: 'none' }}>
+            <a href="https://github.com/prasanna172605/Snugle-Musix/releases/download/v5.2.26/SnuggleMusix-5.2.26-Universal.apk" download style={{ padding: '1rem 2rem', borderRadius: '100px', background: 'linear-gradient(135deg, #FF3366, #FF9933)', color: 'white', textDecoration: 'none', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.5rem', boxShadow: '0 10px 30px -10px rgba(255,51,102,0.5)', transition: 'transform 0.2s', border: 'none' }}>
               <Download size={20} />
               Download APK
             </a>
@@ -195,7 +195,7 @@ const DownloadSection = () => {
             </div>
           </div>
           <div style={{ display: 'flex', gap: '1rem', marginTop: '1rem' }}>
-            <a href="https://github.com/prasanna172605/Snugle-Musix/releases/download/v5.2.25/SnuggleMusix-5.2.25-Universal.apk" download style={{ padding: '1rem 2rem', borderRadius: '100px', background: 'white', color: 'black', textDecoration: 'none', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.5rem', transition: 'transform 0.2s', border: 'none' }}>
+            <a href="https://github.com/prasanna172605/Snugle-Musix/releases/download/v5.2.26/SnuggleMusix-5.2.26-Universal.apk" download style={{ padding: '1rem 2rem', borderRadius: '100px', background: 'white', color: 'black', textDecoration: 'none', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.5rem', transition: 'transform 0.2s', border: 'none' }}>
               <Download size={20} />
               Download APK
             </a>
