@@ -13,6 +13,7 @@
   --accent-primary: #FF3366;
   --accent-secondary: #FF9933;
 
+  /* Accent overlays */
   --accent-violet: rgba(184, 164, 237, 0.15);
   --accent-pink: rgba(255, 77, 139, 0.15);
   --accent-sky: rgba(167, 199, 231, 0.15);
@@ -20,6 +21,8 @@
   --accent-ochre: rgba(232, 185, 74, 0.15);
   --accent-mint: rgba(164, 212, 197, 0.15);
 
+  --btn-text: #ffffff;
+  
   --space-xxs: 4px;
   --space-xs: 8px;
   --space-sm: 12px;
@@ -43,6 +46,28 @@
   line-height: 1.55;
   overflow-x: hidden;
   min-height: 100vh;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.snuggle-root.light-mode {
+  --canvas: #f7f5fb;
+  --surface-soft: #f0ebf5;
+  --surface-card: #ffffff;
+  --surface-dark: #e4d8f0;
+  --ink: #2d1b4e;
+  --body: #5a4b7a;
+  --muted: #8b7aab;
+  --hairline: rgba(45, 27, 78, 0.1);
+  
+  --accent-primary: #e62e5c;
+  --accent-secondary: #e68a2e;
+  
+  --accent-violet: rgba(138, 104, 218, 0.15);
+  --accent-pink: rgba(229, 69, 125, 0.15);
+  --accent-sky: rgba(119, 160, 201, 0.15);
+  --accent-peach: rgba(230, 158, 119, 0.15);
+  --accent-ochre: rgba(209, 166, 67, 0.15);
+  --accent-mint: rgba(148, 191, 177, 0.15);
 }
 
 .snuggle-root h1, 
@@ -266,21 +291,22 @@
 
 .snuggle-features-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-xl);
-  text-align: left;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
 }
 
+.snuggle-col-span-2 { grid-column: span 2; }
+.snuggle-col-span-1 { grid-column: span 1; }
+
 .snuggle-feature-card {
+  background: var(--surface-card);
+  border: 1px solid var(--hairline);
   border-radius: var(--radius-xl);
-  padding: 36px;
+  padding: var(--space-xl);
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
-  position: relative;
-  overflow: hidden;
-  border: 1px solid var(--hairline);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
 }
 
 .snuggle-feature-card:hover {
@@ -289,7 +315,6 @@
   z-index: 1;
 }
 
-.snuggle-col-span-2 { grid-column: span 2; }
 .snuggle-col-span-3 { grid-column: span 3; }
 
 .snuggle-feature-card.flex-row {
@@ -315,14 +340,22 @@
   border-radius: 12px;
 }
 
-.snuggle-feature-card-1 { background-color: var(--accent-violet); }
-.snuggle-feature-card-2 { background-color: var(--accent-pink); }
-.snuggle-feature-card-3 { background-color: var(--accent-sky); }
-.snuggle-feature-card-4 { background-color: var(--accent-peach); }
-.snuggle-feature-card-5 { background-color: var(--accent-ochre); }
-.snuggle-feature-card-6 { background-color: var(--accent-mint); }
+.snuggle-feature-card-1 { background: var(--accent-violet); border-color: rgba(184, 164, 237, 0.2); }
+.snuggle-feature-card-2 { background: var(--accent-pink); border-color: rgba(255, 77, 139, 0.2); }
+.snuggle-feature-card-3 { background: var(--accent-sky); border-color: rgba(167, 199, 231, 0.2); }
+.snuggle-feature-card-4 { background: var(--accent-peach); border-color: rgba(255, 176, 132, 0.2); }
+.snuggle-feature-card-5 { background: var(--accent-ochre); border-color: rgba(232, 185, 74, 0.2); }
+.snuggle-feature-card-6 { background: var(--accent-mint); border-color: rgba(164, 212, 197, 0.2); }
+.snuggle-feature-card-7 { background: var(--surface-soft); }
 
-.snuggle-feature-card-1 .snuggle-feature-icon { color: #b8a4ed; }
+.light-mode .snuggle-feature-card-1 { background: var(--accent-violet); border-color: rgba(138, 104, 218, 0.2); }
+.light-mode .snuggle-feature-card-2 { background: var(--accent-pink); border-color: rgba(229, 69, 125, 0.2); }
+.light-mode .snuggle-feature-card-3 { background: var(--accent-sky); border-color: rgba(119, 160, 201, 0.2); }
+.light-mode .snuggle-feature-card-4 { background: var(--accent-peach); border-color: rgba(230, 158, 119, 0.2); }
+.light-mode .snuggle-feature-card-5 { background: var(--accent-ochre); border-color: rgba(209, 166, 67, 0.2); }
+.light-mode .snuggle-feature-card-6 { background: var(--accent-mint); border-color: rgba(148, 191, 177, 0.2); }
+
+.snuggle-feature-icon { color: #b8a4ed; }
 .snuggle-feature-card-2 .snuggle-feature-icon { color: #ff4d8b; }
 .snuggle-feature-card-3 .snuggle-feature-icon { color: #a7c7e7; }
 .snuggle-feature-card-4 .snuggle-feature-icon { color: #ffb084; }
