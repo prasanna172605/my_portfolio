@@ -138,7 +138,7 @@ const Screenshots = () => {
         <h2 style={{ fontSize: '2.5rem', fontWeight: 700, margin: '0 0 1rem 0' }}>Beautiful Interfaces.</h2>
         <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '1.1rem', maxWidth: '600px', margin: '0 auto' }}>Designed following Material 3 principles with an emphasis on fluid animations and dynamic colors.</p>
       </div>
-      <div style={{ display: 'flex', gap: '2rem', padding: '1rem 2rem', overflowX: 'auto', snapType: 'x mandatory' }}>
+      <div style={{ display: 'flex', gap: '2rem', padding: '1rem 2rem', overflowX: 'auto', scrollSnapType: 'x mandatory' }}>
         {[1, 2, 3, 4].map(i => (
           <div key={i} style={{ minWidth: '300px', height: '600px', borderRadius: '24px', backgroundColor: '#111', border: '4px solid #333', flexShrink: 0, scrollSnapAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <span style={{ color: '#555' }}>Screenshot {i}</span>
