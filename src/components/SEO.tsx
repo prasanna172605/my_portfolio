@@ -7,7 +7,7 @@ interface SEOProps {
   ogType?: 'website' | 'article' | 'profile';
   ogImage?: string;
   twitterCard?: 'summary' | 'summary_large_image';
-  structuredData?: Record<string, any>;
+  structuredData?: Record<string, unknown>;
 }
 
 export const SEO = ({
