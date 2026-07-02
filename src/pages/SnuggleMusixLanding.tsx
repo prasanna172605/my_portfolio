@@ -199,13 +199,16 @@ const CustomFooter = () => {
 export function SnuggleMusixLanding() {
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": ["SoftwareApplication", "MobileApplication", "Product"],
+    "@type": ["SoftwareApplication", "MobileApplication"],
     "name": "Snuggle Musix",
     "description": "A beautiful, open-source Android music player featuring Material You, Voice Search, Listen Together, Dynamic Themes and Offline Playback.",
     "operatingSystem": "Android",
     "applicationCategory": "MultimediaApplication",
+    "applicationSubCategory": "Music Application",
     "downloadUrl": "https://github.com/prasanna172605/Snugle-Musix/releases",
     "softwareVersion": "5.2.26",
+    "image": "https://prasanna0705.netlify.app/snuggle-logo.png",
+    "logo": "https://prasanna0705.netlify.app/snuggle-logo.png",
     "author": {
       "@type": "Person",
       "name": "Prasanna Iyappan",
@@ -219,8 +222,7 @@ export function SnuggleMusixLanding() {
       "@type": "WebPage",
       "@id": "https://prasanna0705.netlify.app/Snuggle-Musix"
     },
-    "url": "https://prasanna0705.netlify.app/Snuggle-Musix",
-    "image": "https://prasanna0705.netlify.app/snuggle-logo.png"
+    "url": "https://prasanna0705.netlify.app/Snuggle-Musix"
   };
 
   return (
