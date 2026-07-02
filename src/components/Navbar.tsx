@@ -43,8 +43,18 @@ export const Navbar: React.FC<NavbarProps> = ({ mode, toggleMode }) => {
             >
               {item.label}
             </NavLink>
-          ))}
         </nav>
+
+        {/* Snuggle Musix Link */}
+        <div className="hidden md:flex">
+          <NavLink
+            to="/Snuggle-Musix"
+            className="px-4 py-2 rounded-full bg-gradient-to-r from-pink-500 to-orange-500 text-white font-medium hover:scale-105 transition-transform text-sm no-underline"
+            style={{ backgroundImage: 'linear-gradient(135deg, #FF3366, #FF9933)', color: 'white', padding: '0.5rem 1rem', borderRadius: '100px', fontSize: '0.875rem', fontWeight: 500, textDecoration: 'none' }}
+          >
+            Snuggle Musix
+          </NavLink>
+        </div>
 
         {/* Controls */}
         <div className="header-controls">
