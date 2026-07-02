@@ -43,6 +43,7 @@ export const Navbar: React.FC<NavbarProps> = ({ mode, toggleMode }) => {
             >
               {item.label}
             </NavLink>
+          ))}
         </nav>
 
         {/* Snuggle Musix Link */}
