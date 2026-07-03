@@ -44,8 +44,8 @@ export default function Hero() {
           </motion.div>
           
           <div className="text-5xl md:text-7xl lg:text-[6rem] font-display font-extrabold leading-[0.9] tracking-tighter mb-10 flex flex-col items-center">
-            <WordPull text="Prasanna Iyappan" wrapperClassName="justify-center flex-nowrap" />
-            <WordPull text="Aspiring AI & Data Engineer" className="text-gradient whitespace-nowrap" wrapperClassName="justify-center flex-nowrap" delay={0.1} />
+            <WordPull text="Prasanna Iyappan" wrapperClassName="justify-center flex-wrap md:flex-nowrap" />
+            <WordPull text="Aspiring AI & Data Engineer" className="text-gradient whitespace-break-spaces md:whitespace-nowrap text-center text-4xl md:text-5xl lg:text-[5rem]" wrapperClassName="justify-center flex-wrap md:flex-nowrap mt-2" delay={0.1} />
           </div>
           
           <motion.p

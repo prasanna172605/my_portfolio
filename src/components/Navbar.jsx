@@ -23,7 +23,7 @@ export default function Navbar() {
   return (
     <nav 
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-        isScrolled ? 'py-4 bg-white/70 backdrop-blur-xl border-b border-white/50 shadow-premium' : 'py-8 bg-transparent'
+        isScrolled ? 'py-4 bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl border-b border-white/50 dark:border-slate-800/50 shadow-premium' : 'py-8 bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
@@ -31,7 +31,7 @@ export default function Navbar() {
           href="#"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="text-3xl font-display font-extrabold tracking-tighter"
+          className="text-3xl font-display font-extrabold tracking-tighter text-slate-900 dark:text-white"
         >
           P<span className="text-accent-indigo">I</span>.
         </motion.a>
@@ -45,24 +45,24 @@ export default function Navbar() {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
-              className="nav-link group relative text-sm font-semibold"
+              className="nav-link group relative text-sm font-semibold text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
             >
               {link.name}
               <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-accent-indigo transition-all duration-300 group-hover:w-full" />
             </motion.a>
           ))}
-          <div className="flex items-center gap-6 ml-6 pl-10 border-l border-slate-200">
+          <div className="flex items-center gap-6 ml-6 pl-10 border-l border-slate-200 dark:border-slate-700">
             <Link to="/Snuggle-Musix" className="text-sm font-semibold bg-accent-indigo text-white px-4 py-2 rounded-full hover:bg-accent-indigo/90 transition-colors">
               Snuggle Musix
             </Link>
-            <a href="https://github.com/prasanna172605" className="text-secondary hover:text-primary transition-colors"><GithubIcon size={20} /></a>
-            <a href="https://www.linkedin.com/in/prasanna-iyappan-b728042a3/" className="text-secondary hover:text-primary transition-colors"><Linkedin size={20} /></a>
+            <a href="https://github.com/prasanna172605" className="text-secondary dark:text-slate-400 hover:text-primary dark:hover:text-white transition-colors"><GithubIcon size={20} /></a>
+            <a href="https://www.linkedin.com/in/prasanna-iyappan-b728042a3/" className="text-secondary dark:text-slate-400 hover:text-primary dark:hover:text-white transition-colors"><Linkedin size={20} /></a>
           </div>
         </div>
 
         {/* Mobile Toggle */}
         <button 
-          className="md:hidden p-3 bg-white/50 backdrop-blur-md border border-white/80 rounded-2xl shadow-sm text-primary"
+          className="md:hidden p-3 bg-white/50 dark:bg-slate-800/50 backdrop-blur-md border border-white/80 dark:border-slate-700/80 rounded-2xl shadow-sm text-primary dark:text-white"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X /> : <Menu />}
@@ -76,7 +76,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white/90 backdrop-blur-2xl border-b border-slate-100"
+            className="md:hidden bg-white/95 dark:bg-slate-900/95 backdrop-blur-2xl border-b border-slate-100 dark:border-slate-800"
           >
             <div className="px-6 py-12 flex flex-col gap-8">
               {navLinks.map((link) => (
@@ -84,7 +84,7 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-4xl font-display font-extrabold text-secondary hover:text-primary transition-all tracking-tighter"
+                  className="text-4xl font-display font-extrabold text-secondary dark:text-slate-400 hover:text-primary dark:hover:text-white transition-all tracking-tighter"
                 >
                   {link.name}
                 </a>
