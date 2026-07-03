@@ -46,7 +46,7 @@ export default function ProjectsGrid() {
               title={project.title}
               description={project.description}
               header={
-                <div className="relative w-full h-full min-h-[12rem] flex flex-1 rounded-xl overflow-hidden bg-slate-200 dark:bg-slate-800 mb-4">
+                <div className="relative w-full h-48 flex-none rounded-xl overflow-hidden bg-slate-200 dark:bg-slate-800 mb-4 shrink-0">
                   {project.image ? (
                     <img 
                       src={project.image} 
