@@ -1,16 +1,11 @@
 import { useState } from 'react';
 import { Sparkles, Loader2 } from 'lucide-react';
-import { GoogleGenerativeAI } from "@google/generative-ai";
-
-const apiKey = import.meta.env.VITE_GEMINI_API_KEY || "";
-const genAI = new GoogleGenerativeAI(apiKey);
 
 const getCreativeSpark = async () => {
   try {
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-    const prompt = "Generate a short, evocative, and creative art prompt for a pencil sketch or digital painting. It should be abstract or surreal. Just the prompt, no extra text. Example: 'A clock melting over a tree branch in a desert.'";
-    const result = await model.generateContent(prompt);
-    return result.response.text();
+    const res = await fetch("/api/creative-spark", { method: "POST" });
+    const data = await res.json();
+    return data.text || "A lonely astronaut sitting on a park bench on the moon.";
   } catch {
     return "A lonely astronaut sitting on a park bench on the moon.";
   }
