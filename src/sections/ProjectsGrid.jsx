@@ -51,7 +51,7 @@ export default function ProjectsGrid() {
                     <img 
                       src={project.image} 
                       alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover/bento:scale-110"
+                      className="w-full h-full object-contain p-4 transition-transform duration-700 group-hover/bento:scale-110"
                     />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 overflow-hidden relative">

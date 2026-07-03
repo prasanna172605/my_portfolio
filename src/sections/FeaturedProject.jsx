@@ -42,7 +42,7 @@ export default function FeaturedProject() {
                     alt={project.title}
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.8 }}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain p-4"
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 overflow-hidden relative">

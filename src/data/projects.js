@@ -5,9 +5,9 @@ export const projects = [
     description: "A premium open-source Android music player built with Kotlin & Jetpack Compose. Supports YouTube Music, JioSaavn, Spotify import, lyrics sync, Material You theming, and more. Features a full CI/CD release pipeline on GitHub Actions.",
     role: "Core Developer",
     tech: ["Kotlin", "Jetpack Compose", "Material You", "CI/CD"],
-    link: "https://github.com/prasanna172605/SnuggleMusix",
+    link: "/Snuggle-Musix",
     github: "https://github.com/prasanna172605/SnuggleMusix",
-    image: "/screenshots/Homepage.jpeg",
+    image: "/snuggle-logo.png",
     featured: true
   },
   {
@@ -57,9 +57,20 @@ export const projects = [
   {
     id: 6,
     title: "Payanam Parcel",
-    description: "A new way for Parcel and courier services.",
+    description: "A crowd-sourced, peer-to-peer parcel delivery platform that connects Senders with Travelers already heading to the same destination — turning every journey into a delivery opportunity.",
     role: "Full-Stack Developer",
     tech: ["Logistics", "Work in Progress"],
+    link: "#",
+    github: "#",
+    image: "",
+    featured: false
+  },
+  {
+    id: 7,
+    title: "SlotCut",
+    description: "A hyperlocal salon booking and live-queue management platform built for Tier 2/3 cities, where walk-in wait times are the real pain point. Users see live queue status and book a slot in real time instead of waiting in-store.",
+    role: "Full-Stack Developer",
+    tech: ["Hyperlocal", "Booking", "Queue Management"],
     link: "#",
     github: "#",
     image: "",
