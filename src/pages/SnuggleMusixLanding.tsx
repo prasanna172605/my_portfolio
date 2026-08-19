@@ -48,7 +48,7 @@ const Header = ({ theme, setTheme }: { theme: 'dark' | 'light', setTheme: (t: 'd
   );
 };
 
-const Hero = () => {
+const Hero = ({ downloadUrl, latestVersion }: { downloadUrl: string, latestVersion: string }) => {
   return (
     <header className="snuggle-hero snuggle-container">
       <div className="snuggle-hero-logo">
@@ -64,8 +64,8 @@ const Hero = () => {
         A premium, open-source Android music player built with Material 3. Experience lossless audio, dynamic themes, and synchronized lyrics in a beautiful package.
       </p>
       <div className="snuggle-hero-ctas">
-        <a href="https://github.com/prasanna172605/Snugle-Musix/releases/download/v5.2.26/SnuggleMusix-5.2.26-Universal.apk" download target="_top" className="snuggle-btn snuggle-btn-primary" aria-label="Download Snuggle Musix APK">
-          <Download size={18} /> Download APK
+        <a href={downloadUrl} download target="_top" className="snuggle-btn snuggle-btn-primary" aria-label="Download Snuggle Musix APK">
+          <Download size={18} /> Download APK {latestVersion ? `(${latestVersion})` : ''}
         </a>
         <a href="https://github.com/prasanna172605/Snugle-Musix" target="_blank" rel="noreferrer" className="snuggle-btn snuggle-btn-secondary" aria-label="View Snuggle Musix Source Code on GitHub">
           <Github size={18} /> View Source
@@ -139,10 +139,10 @@ const Features = () => {
           </div>
         </div>
         <div className="snuggle-feature-card snuggle-feature-card-3">
-          <div className="snuggle-feature-icon"><Brain size={24} /></div>
+          <div className="snuggle-feature-icon"><Layout size={24} /></div>
           <div>
-            <h3 className="snuggle-title-md">Smart Queue & Snuggle Brain</h3>
-            <p className="snuggle-body-sm" style={{ color: 'var(--muted)' }}>Intelligent queue management and AI-curated recommendations.</p>
+            <h3 className="snuggle-title-md">Apple-Inspired & Classic Mini Player</h3>
+            <p className="snuggle-body-sm" style={{ color: 'var(--muted)' }}>Switch effortlessly between Apple-inspired UI and classic docked or floating mini player.</p>
           </div>
         </div>
         <div className="snuggle-feature-card snuggle-feature-card-4 snuggle-col-span-2 flex-row">
@@ -220,6 +220,28 @@ const CustomFooter = () => {
 
 export function SnuggleMusixLanding() {
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
+  const [latestVersion, setLatestVersion] = useState<string>('Latest');
+  const [downloadUrl, setDownloadUrl] = useState<string>('https://github.com/prasanna172605/Snugle-Musix/releases/latest');
+
+  useEffect(() => {
+    fetch('https://api.github.com/repos/prasanna172605/Snugle-Musix/releases/latest')
+      .then(res => res.json())
+      .then(data => {
+        if (data && data.tag_name) {
+          setLatestVersion(data.tag_name);
+          const apkAsset = data.assets?.find((a: any) => a.name?.endsWith('.apk'));
+          if (apkAsset?.browser_download_url) {
+            setDownloadUrl(apkAsset.browser_download_url);
+          } else if (data.html_url) {
+            setDownloadUrl(data.html_url);
+          }
+        }
+      })
+      .catch(() => {
+        // Fallback to github releases latest redirect
+        setDownloadUrl('https://github.com/prasanna172605/Snugle-Musix/releases/latest');
+      });
+  }, []);
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -229,8 +251,8 @@ export function SnuggleMusixLanding() {
     "operatingSystem": "Android",
     "applicationCategory": "MultimediaApplication",
     "applicationSubCategory": "Music Application",
-    "downloadUrl": "https://github.com/prasanna172605/Snugle-Musix/releases",
-    "softwareVersion": "5.2.26",
+    "downloadUrl": downloadUrl,
+    "softwareVersion": latestVersion,
     "image": "https://prasanna0705.netlify.app/snuggle-logo.png",
     "logo": "https://prasanna0705.netlify.app/snuggle-logo.png",
     "author": {
@@ -258,7 +280,7 @@ export function SnuggleMusixLanding() {
         structuredData={structuredData}
       />
       <Header theme={theme} setTheme={setTheme} />
-      <Hero />
+      <Hero downloadUrl={downloadUrl} latestVersion={latestVersion} />
       <Features />
       <Screenshots />
       <CustomFooter />
