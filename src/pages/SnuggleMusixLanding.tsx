@@ -274,8 +274,8 @@ export function SnuggleMusixLanding() {
   return (
     <div className={`snuggle-root ${theme === 'light' ? 'light-mode' : ''}`}>
       <SEO 
-        title="Snuggle Musix – Modern Material You Music Player for Android" 
-        description="Snuggle Musix is a beautiful open-source Android music player featuring Material You, Apple Music inspired player, Voice Search, Listen Together, Dynamic Themes and Offline Playback."
+        title="Snuggle Musix - Free Ad-Free Music Player for Android" 
+        description="Snuggle Musix is a premium, free ad-free music player for Android. An open-source music client built with Jetpack Compose featuring Material You themes, Apple-inspired glass interface, synchronized lyrics, local files integration, and offline playback. Download Snuggle Musix APK now."
         canonicalUrl="https://prasanna0705.netlify.app/Snuggle-Musix"
         structuredData={structuredData}
       />

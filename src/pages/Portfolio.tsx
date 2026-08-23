@@ -1,3 +1,4 @@
+import { SEO } from "../components/SEO";
 import Navbar from '../components/Navbar';
 import CustomCursor from '../components/CustomCursor';
 import SmoothScroll from '../components/SmoothScroll';
@@ -16,6 +17,11 @@ export function Portfolio() {
   return (
     <SmoothScroll>
       <div className="relative bg-background text-primary selection:bg-purple-600/30 transition-colors duration-700">
+        <SEO
+          title="Prasanna Iyappan | Portfolio - Full-Stack Developer & AI Engineer"
+          description="Portfolio of Prasanna Iyappan. Full-Stack Developer and AI/ML Engineer. Builder of Snuggle Musix, Atti, and smart data applications. Explore my projects, certifications, and technical skills."
+          canonicalUrl="https://prasanna0705.netlify.app/"
+        />
         <CustomCursor />
         <ThemeToggle />
         <Navbar />
