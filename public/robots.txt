@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-
+Allow: /Snuggle-Musix
 Sitemap: https://prasanna0705.netlify.app/sitemap.xml
