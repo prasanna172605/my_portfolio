@@ -18,9 +18,8 @@ export function Portfolio() {
     <SmoothScroll>
       <div className="relative bg-background text-primary selection:bg-purple-600/30 transition-colors duration-700">
         <SEO
-          title="Prasanna Iyappan | AI & Data Engineer | Full-Stack Developer"
-          description="Portfolio of Prasanna Iyappan. Aspiring AI & Data Engineer, Full-Stack Developer, and creator of Snuggle Musix."
-          keywords="Prasanna Iyappan, Portfolio, AI Engineer, Full Stack Developer, Snuggle Musix, Machine Learning, React, Android"
+          title="Prasanna Iyappan | Portfolio - Full-Stack Developer & AI Engineer"
+          description="Portfolio of Prasanna Iyappan. Full-Stack Developer and AI/ML Engineer. Builder of Snuggle Musix, Atti, and smart data applications. Explore my projects, certifications, and technical skills."
           canonicalUrl="https://prasanna0705.netlify.app/"
         />
         <CustomCursor />
