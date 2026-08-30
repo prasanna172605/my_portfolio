@@ -54,7 +54,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="max-w-2xl text-lg md:text-xl text-secondary leading-relaxed mb-14"
           >
-            I build real products — apps, platforms, and tools — end-to-end. Co-founder of Atti-Community, currently building Snuggle Musix and other scalable software solutions.
+            I build real products — apps, platforms, and tools — end-to-end. Founder of Atti-Community, currently building Snuggle Musix and other scalable software solutions.
           </motion.p>
           
           <motion.div

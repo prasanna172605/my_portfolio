@@ -34,7 +34,7 @@ export default function About() {
                 Hi, I'm Prasanna Iyappan, passionate about AI, Machine Learning, and Full Stack Development. I'm a B.E. AIML student who loves working with cloud, data, and visualisation. I enjoy turning messy datasets into crisp dashboards and blending technical skills with creativity — from AWS and Azure to Power BI, Python, and frontend development.
               </p>
               <p>
-                I co-founded Atti-Community, where I lead development across web, branding, and automation work. Outside of that, I'm usually deep in a personal build — right now it's Snuggle Musix, an open-source Android music player — while working through a structured data analytics track alongside my core full-stack work.
+                I founded Atti-Community, where I lead development across web, branding, and automation work. Outside of that, I'm usually deep in a personal build — right now it's Snuggle Musix, an open-source Android music player — while working through a structured data analytics track alongside my core full-stack work.
               </p>
             </div>
           </motion.div>

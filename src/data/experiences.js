@@ -1,7 +1,7 @@
 export const experiences = [
   {
     id: 1,
-    role: "Co-Founder",
+    role: "Founder",
     company: "Atti-Community",
     date: "2025 - Present",
     description: "Leading development across web, branding, and automation work for a student-run tech and creative studio."
