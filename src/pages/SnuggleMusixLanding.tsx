@@ -213,7 +213,7 @@ export function SnuggleMusixLanding() {
   };
 
   return (
-    <div className={`snuggle-app-root ${theme}`}>
+    <div className={`snuggle-root ${theme === "light" ? "light-mode" : ""}`}>
       <SEO 
         title="Snuggle Musix – Free Open-Source Music Player for Android" 
         description="Snuggle Musix is a free, open-source Android music player with Material 3 design, dynamic themes, synchronized lyrics, lossless audio and more."
