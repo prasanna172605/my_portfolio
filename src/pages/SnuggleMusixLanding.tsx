@@ -282,7 +282,7 @@ export function SnuggleMusixLanding() {
         title="Snuggle Musix APK Download - #1 Free Spotify Alternative for Android (Ad-Free)" 
         description="Download Snuggle Musix APK: The ultimate free Spotify alternative for Android. 100% ad-free music streaming, offline playback, synchronized lyrics, lossless audio, background play, and Apple-inspired Liquid Glass Material You UI."
         keywords="spotify alternative apk, free spotify alternative android, snuggle musix apk, snuggle musix download, best spotify alternative no ads, adfree music streaming apk android, free music player apk, offline music player android, snuggle music apk download, open source spotify alternative, yt music alternative apk, free music app android"
-        canonicalUrl="https://prasanna0705.netlify.app/Snuggle-Musix"
+        canonicalUrl="https://prasanna0705.netlify.app/snuggle-musix"
         structuredData={structuredData}
       />
       <Header theme={theme} setTheme={setTheme} />
