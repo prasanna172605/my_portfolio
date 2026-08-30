@@ -1,8 +1,8 @@
 export const projects = [
   {
     id: 1,
-    title: "SnuggleMusix",
-    description: "A premium open-source Android music player built with Kotlin & Jetpack Compose. Supports YouTube Music, JioSaavn, Spotify import, lyrics sync, Material You theming, and more. Features a full CI/CD release pipeline on GitHub Actions.",
+    title: "Snuggle Musix",
+    description: "Snuggle Musix is a free, open-source music player for Android built with Kotlin & Jetpack Compose. Supports YouTube Music, JioSaavn, Spotify import, lyrics sync, Material You theming, and more. Features a full CI/CD release pipeline on GitHub Actions.",
     role: "Core Developer",
     tech: ["Kotlin", "Jetpack Compose", "Material You", "CI/CD"],
     link: "/Snuggle-Musix",

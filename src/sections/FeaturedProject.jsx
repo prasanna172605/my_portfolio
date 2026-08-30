@@ -86,6 +86,15 @@ export default function FeaturedProject() {
 
             <div className="flex items-center gap-8">
                {project.link !== "#" && (
+                <a
+                  href={project.link}
+                  className="flex items-center gap-2 text-primary dark:text-white font-bold hover:text-accent-indigo dark:hover:text-accent-indigo transition-colors"
+                  aria-label={`Open ${project.title}`}
+                >
+                  {project.title === "Snuggle Musix" ? "Snuggle Musix" : "View Live"} <ExternalLink size={18} />
+                </a>
+              )}
+              {false && project.link !== "#" && (
                 <motion.a
                   href={project.link}
                   target="_blank"
