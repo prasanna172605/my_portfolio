@@ -4,12 +4,12 @@
     <loc>https://prasanna0705.netlify.app/</loc>
     <lastmod>2026-08-30</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://prasanna0705.netlify.app/snuggle-musix</loc>
     <lastmod>2026-08-30</lastmod>
     <changefreq>daily</changefreq>
-    <priority>1.0</priority>
+    <priority>0.9</priority>
   </url>
 </urlset>

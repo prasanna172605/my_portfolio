@@ -1,7 +1,2 @@
-# 301 Permanent Redirects for casing consistency
 /Snuggle-Musix    /snuggle-musix    301!
-/SnuggleMusix     /snuggle-musix    301!
-/snugglemusix     /snuggle-musix    301!
-
-# SPA 200 Rewrite for all client routes
-/*    /index.html    200
+/*    /index.html   200
