@@ -60,18 +60,18 @@ const Hero = ({ downloadUrl, latestVersion }: { downloadUrl: string, latestVersi
       <div className="snuggle-hero-logo">
         <img src="/snuggle-logo.png" alt="Snuggle Musix Logo" />
       </div>
-      <h1 className="snuggle-display-xl" style={{ marginBottom: '0.5rem' }}>
+      <h1 className="snuggle-display-xl" style={{ margin: '0 0 0.5rem 0' }}>
         Snuggle Musix
       </h1>
-      <p className="snuggle-display-lg" style={{ background: 'linear-gradient(135deg, #FF3366, #FF9933)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontWeight: 700, margin: '0.25rem 0 1.25rem 0' }}>
-        Music that moves you. Feels personal.
+      <p className="snuggle-display-lg" style={{ background: 'linear-gradient(135deg, #FF3366, #FF9933)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontWeight: 700, margin: '0 0 1.5rem 0' }}>
+        Music that moves you.<br />Feels personal.
       </p>
       <p className="snuggle-hero-sub snuggle-body-md">
         Snuggle Musix is a free, open-source Android music player with Material 3 design, dynamic themes, synchronized lyrics, lossless audio and more.
       </p>
       <div className="snuggle-hero-ctas">
         <a href={downloadUrl} download target="_top" className="snuggle-btn snuggle-btn-primary" aria-label="Download Snuggle Musix APK">
-          <Download size={18} /> Download APK {latestVersion ? `(${latestVersion})` : ''}
+          <Download size={18} /> Download APK {latestVersion && latestVersion !== 'Latest' ? `(${latestVersion})` : ''}
         </a>
         <a href="https://github.com/prasanna172605/Snugle-Musix" target="_blank" rel="noreferrer" className="snuggle-btn snuggle-btn-secondary" aria-label="View Snuggle Musix Source Code on GitHub">
           <Github size={18} /> View Source
@@ -84,80 +84,137 @@ const Hero = ({ downloadUrl, latestVersion }: { downloadUrl: string, latestVersi
 const Screenshots = () => {
   const screenshots = [
     { file: 'Homepage.jpeg', label: 'Home' },
-    { file: 'Apple Music Style.jpeg', label: 'Player' },
-    { file: 'Synchronized Lyrics.jpeg', label: 'Lyrics' },
-    { file: 'Dynamic Theming.jpeg', label: 'Theme' },
-    { file: 'Mood Playlists.jpeg', label: 'Moods' },
-    { file: 'Speed Dial.jpeg', label: 'Speed Dial' },
-    { file: 'Voice Search.jpeg', label: 'Voice Search' },
-    { file: 'Equalizer.jpeg', label: 'Equalizer' }
+    { file: 'Search and Explore.jpeg', label: 'Search' },
+    { file: 'Music Player.jpeg', label: 'Now Playing' },
+    { file: 'Synchronized lyrics.jpeg', label: 'Lyrics' },
+    { file: 'Song recognition.jpeg', label: 'Recognition' },
+    { file: 'Playlist & library.jpeg', label: 'Library' }
   ];
 
   return (
-    <section className="snuggle-screenshots snuggle-container">
-      <div className="snuggle-section-header">
-        <h2 className="snuggle-display-md">Crafted with Precision</h2>
-        <p className="snuggle-body-md" style={{ color: 'var(--text-secondary)' }}>
-          Every detail thoughtfully designed with Material 3 and Liquid Glass aesthetics.
-        </p>
+    <section className="snuggle-screenshots">
+      <div className="snuggle-container snuggle-screenshots-header">
+        <p className="snuggle-caption-uppercase" style={{ color: 'var(--muted)', marginBottom: 'var(--space-sm)' }}>SEE IT IN ACTION</p>
+        <h2 className="snuggle-display-md" style={{ color: 'var(--ink)' }}>Built for the way you listen</h2>
       </div>
-      <div className="snuggle-gallery">
-        {screenshots.map((s, i) => (
-          <div key={i} className="snuggle-phone-frame">
-            <img src={`/screenshots/${s.file}`} alt={`Snuggle Musix - ${s.label}`} loading="lazy" />
-          </div>
-        ))}
+      <div className="snuggle-scroll-strip-wrapper">
+        <div className="snuggle-marquee-group">
+          {screenshots.map((s, i) => (
+            <div key={`m1-${i}`} className="snuggle-phone-mockup-wrapper">
+              <img src={`/screenshots/${s.file}`} alt={`Snuggle Musix ${s.label} interface screenshot`} className="snuggle-phone-mockup" loading="lazy" />
+              <p className="snuggle-caption" style={{ color: 'var(--muted)' }}>{s.label}</p>
+            </div>
+          ))}
+        </div>
+        <div className="snuggle-marquee-group" aria-hidden="true">
+          {screenshots.map((s, i) => (
+            <div key={`m2-${i}`} className="snuggle-phone-mockup-wrapper">
+              <img src={`/screenshots/${s.file}`} alt={`Snuggle Musix ${s.label} interface screenshot`} className="snuggle-phone-mockup" loading="lazy" />
+              <p className="snuggle-caption" style={{ color: 'var(--muted)' }}>{s.label}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
 };
 
 const Features = () => {
-  const feats = [
-    { icon: <Layout />, title: "Material 3 Design", desc: "Dynamic color extraction tailored seamlessly with your album art and wallpaper." },
-    { icon: <Mic />, title: "Synchronized Lyrics", desc: "Sing along with precision, zero-latency real-time synchronized lyrics." },
-    { icon: <Brain />, title: "AI Powered Search", desc: "Find your music instantly with natural voice command search." },
-    { icon: <Ban />, title: "100% Ad-Free", desc: "Zero telemetry, no interruptions. Pure music enjoyment for everyone." },
-    { icon: <Radio />, title: "Lossless Audio", desc: "Experience pristine studio sound with an integrated graphic equalizer." },
-    { icon: <DownloadCloud />, title: "Offline Playback", desc: "Download tracks and albums locally for listening anywhere, anytime." },
-    { icon: <Users />, title: "Listen Together", desc: "Synchronize audio playback seamlessly across multiple friends' devices." },
-    { icon: <Shield />, title: "Open Source", desc: "Built transparently on Android Media3 with full community trust." }
-  ];
-
   return (
     <section className="snuggle-features snuggle-container">
-      <div className="snuggle-section-header">
-        <h2 className="snuggle-display-md">Next-Gen Audio Experience</h2>
-        <p className="snuggle-body-md" style={{ color: 'var(--text-secondary)' }}>
-          Everything you love about modern music apps, entirely open source and free.
-        </p>
-      </div>
-      <div className="snuggle-grid">
-        {feats.map((f, i) => (
-          <div key={i} className="snuggle-card">
-            <div className="snuggle-card-icon">{f.icon}</div>
-            <h3 className="snuggle-headline">{f.title}</h3>
-            <p className="snuggle-body-md">{f.desc}</p>
+      <h2 className="snuggle-display-lg" style={{ color: 'var(--ink)', marginBottom: 'var(--space-sm)' }}>Next-Gen Audio Experience</h2>
+      <p className="snuggle-body-md" style={{ color: 'var(--muted)', marginBottom: 'var(--space-xxl)' }}>Everything you love about modern music apps, entirely open source and free.</p>
+      
+      <div className="snuggle-features-grid">
+        <div className="snuggle-feature-card snuggle-feature-card-1 snuggle-col-span-2">
+          <div className="snuggle-feature-icon"><Layout size={24} /></div>
+          <div>
+            <h3 className="snuggle-title-md">Material You Dynamic Colors</h3>
+            <p className="snuggle-body-sm" style={{ color: 'var(--muted)' }}>Adapts dynamically to your album art and wallpaper with fluid Material 3 theming.</p>
           </div>
-        ))}
+        </div>
+        <div className="snuggle-feature-card snuggle-feature-card-2 snuggle-col-span-2">
+          <div className="snuggle-feature-icon"><Mic size={24} /></div>
+          <div>
+            <h3 className="snuggle-title-md">Synchronized Lyrics</h3>
+            <p className="snuggle-body-sm" style={{ color: 'var(--muted)' }}>Sing along with real-time synchronized word-by-word lyrics, translation, and romanization.</p>
+          </div>
+        </div>
+        <div className="snuggle-feature-card snuggle-feature-card-3 snuggle-col-span-2 flex-row">
+          <div className="snuggle-feature-icon"><Smartphone size={24} /></div>
+          <div>
+            <h3 className="snuggle-title-md">Apple-Inspired & Classic Mini Player</h3>
+            <p className="snuggle-body-sm" style={{ color: 'var(--muted)' }}>Switch effortlessly between Apple-inspired UI and classic docked or floating mini player.</p>
+          </div>
+        </div>
+        <div className="snuggle-feature-card snuggle-feature-card-4 snuggle-col-span-2 flex-row">
+          <div className="snuggle-feature-icon"><Ban size={24} /></div>
+          <div>
+            <h3 className="snuggle-title-md">No ads for now and forever</h3>
+            <p className="snuggle-body-sm" style={{ color: 'var(--muted)' }}>Enjoy a pristine, uninterrupted listening experience without any advertisements.</p>
+          </div>
+        </div>
+        <div className="snuggle-feature-card snuggle-feature-card-5">
+          <div className="snuggle-feature-icon"><Radio size={24} /></div>
+          <div>
+            <h3 className="snuggle-title-md">High quality streaming</h3>
+            <p className="snuggle-body-sm" style={{ color: 'var(--muted)' }}>Stream your favorite music in pristine, high-fidelity audio quality.</p>
+          </div>
+        </div>
+        <div className="snuggle-feature-card snuggle-feature-card-6">
+          <div className="snuggle-feature-icon"><DownloadCloud size={24} /></div>
+          <div>
+            <h3 className="snuggle-title-md">Offline Playback</h3>
+            <p className="snuggle-body-sm" style={{ color: 'var(--muted)' }}>Download your music to enjoy it anywhere, anytime without an internet connection.</p>
+          </div>
+        </div>
+        <div className="snuggle-feature-card snuggle-feature-card-7 snuggle-col-span-2 flex-row">
+          <div className="snuggle-feature-icon" style={{ color: 'var(--ink)' }}><Shield size={24} /></div>
+          <div>
+            <h3 className="snuggle-title-md">Privacy First & Open Source</h3>
+            <p className="snuggle-body-sm" style={{ color: 'var(--muted)' }}>Completely free and open source. No tracking, no ads. Your listening history and data stay completely on your device.</p>
+          </div>
+        </div>
+        <div className="snuggle-feature-card snuggle-feature-card-8 snuggle-col-span-2 flex-row">
+          <div className="snuggle-feature-icon" style={{ color: 'var(--ink)' }}><Users size={24} /></div>
+          <div>
+            <h3 className="snuggle-title-md">Listen Together</h3>
+            <p className="snuggle-body-sm" style={{ color: 'var(--muted)' }}>Sync your playback with friends in real-time. Listen to the same music together, no matter where you are.</p>
+          </div>
+        </div>
       </div>
     </section>
   );
 };
 
 const CustomFooter = () => {
+  const isMobile = useIsMobile();
   return (
-    <footer className="snuggle-footer snuggle-container">
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
-        <p className="snuggle-body-md" style={{ color: 'var(--text-tertiary)' }}>
-          Built with passion by <a href="https://aberrant-portfolio-2026.web.app/" target="_blank" rel="noreferrer" style={{ color: '#FF3366', textDecoration: 'none', fontWeight: 600 }}>Prasanna Iyappan</a>.
-        </p>
-        <p className="snuggle-body-md" style={{ color: 'var(--text-tertiary)' }}>
-          <a href="/" style={{ color: 'inherit', textDecoration: 'underline' }}>Portfolio</a> • <a href="https://github.com/prasanna172605/Snugle-Musix" target="_blank" rel="noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>GitHub Repository</a>
-        </p>
-        <p className="snuggle-body-md" style={{ color: 'var(--text-tertiary)', fontSize: '0.85rem' }}>
-          &copy; {new Date().getFullYear()} Snuggle Musix. Free & Open Source.
-        </p>
+    <footer style={{ borderTop: '1px solid var(--hairline)', padding: '4rem 0', backgroundColor: 'var(--surface-soft)', marginTop: '4rem' }}>
+      <div className="snuggle-container" style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', justifyContent: 'space-between', gap: '3rem' }}>
+        <div>
+          <div className="snuggle-display-font" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
+            <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: 'linear-gradient(135deg, #FF3366, #FF9933)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <Smartphone size={16} color="white" />
+            </div>
+            <span style={{ fontWeight: 'bold', fontSize: '1.25rem' }}>Snuggle Musix</span>
+          </div>
+          <p className="snuggle-body-sm" style={{ color: 'var(--muted)', maxWidth: '300px', lineHeight: 1.6 }}>
+            Developed by Abberant. An open-source, premium music player for Android.
+          </p>
+        </div>
+        <div style={{ display: 'flex', gap: isMobile ? '2rem' : '4rem', flexDirection: isMobile ? 'column' : 'row' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            <span style={{ fontWeight: 600, color: 'white', marginBottom: '0.5rem' }}>Project</span>
+            <a href="https://github.com/prasanna172605/Snugle-Musix" target="_blank" rel="noreferrer" style={{ color: 'var(--muted)', textDecoration: 'none', fontSize: '0.9rem' }}>GitHub Repository</a>
+            <a href="https://github.com/prasanna172605/Snugle-Musix/releases" target="_blank" rel="noreferrer" style={{ color: 'var(--muted)', textDecoration: 'none', fontSize: '0.9rem' }}>Releases</a>
+            <a href="https://github.com/prasanna172605/Snugle-Musix/issues" target="_blank" rel="noreferrer" style={{ color: 'var(--muted)', textDecoration: 'none', fontSize: '0.9rem' }}>Issue Tracker</a>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            <span style={{ fontWeight: 600, color: 'white', marginBottom: '0.5rem' }}>Legal</span>
+            <a href="https://github.com/prasanna172605/Snugle-Musix/blob/main/LICENSE" target="_blank" rel="noreferrer" style={{ color: 'var(--muted)', textDecoration: 'none', fontSize: '0.9rem' }}>License</a>
+          </div>
+        </div>
       </div>
     </footer>
   );
@@ -165,17 +222,21 @@ const CustomFooter = () => {
 
 export function SnuggleMusixLanding() {
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
-  const [downloadUrl, setDownloadUrl] = useState('https://github.com/prasanna172605/Snugle-Musix/releases/latest');
-  const [latestVersion, setLatestVersion] = useState('');
+  const [latestVersion, setLatestVersion] = useState<string>('Latest');
+  const [downloadUrl, setDownloadUrl] = useState<string>('https://github.com/prasanna172605/Snugle-Musix/releases/latest');
 
   useEffect(() => {
     fetch('https://api.github.com/repos/prasanna172605/Snugle-Musix/releases/latest')
       .then(res => res.json())
       .then(data => {
-        if (data.tag_name) setLatestVersion(data.tag_name);
-        const apk = data.assets?.find((a: any) => a.name.endsWith('.apk'));
-        if (apk?.browser_download_url) {
-          setDownloadUrl(apk.browser_download_url);
+        if (data && data.tag_name) {
+          setLatestVersion(data.tag_name);
+          const apkAsset = data.assets?.find((a: any) => a.name?.endsWith('.apk'));
+          if (apkAsset?.browser_download_url) {
+            setDownloadUrl(apkAsset.browser_download_url);
+          } else if (data.html_url) {
+            setDownloadUrl(data.html_url);
+          }
         }
       })
       .catch(() => {
@@ -213,19 +274,17 @@ export function SnuggleMusixLanding() {
   };
 
   return (
-    <div className={`snuggle-root ${theme === "light" ? "light-mode" : ""}`}>
+    <div className={`snuggle-root ${theme === 'light' ? 'light-mode' : ''}`}>
       <SEO 
         title="Snuggle Musix – Free Open-Source Music Player for Android" 
         description="Snuggle Musix is a free, open-source Android music player with Material 3 design, dynamic themes, synchronized lyrics, lossless audio and more."
         canonicalUrl="https://prasanna0705.netlify.app/Snuggle-Musix"
-        ogType="website"
-        ogImage="https://prasanna0705.netlify.app/snuggle-logo.png"
         structuredData={structuredData}
       />
       <Header theme={theme} setTheme={setTheme} />
       <Hero downloadUrl={downloadUrl} latestVersion={latestVersion} />
-      <Features />
       <Screenshots />
+      <Features />
       <CustomFooter />
     </div>
   );
